@@ -1,0 +1,119 @@
+.aspect-ratio-outer {
+  width: 100%;
+  position: relative;
+  .aspect-ratio-inner {
+    padding-bottom: percentage(6/5);
+    position: relative;
+    @media @mobile {
+      padding-bottom:percentage(5/6);
+    }
+  }
+  leaflet-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:not([ready]) {
+      display: none;
+    }
+  }
+}
+
+.map-area {
+  padding-top: 5px;
+  .display-flex();
+  @media @mobile {
+    .flex-direction(column);
+  }
+};
+.area1 {
+  .flex(2);
+  .flex-wrap(row wrap);
+  @media @mobile {
+    .flex(1);
+    .flex-order(2);
+  }
+};
+.area2 {
+  .flex(1);
+  .flex-wrap(row wrap);
+  padding: 8px 12px;
+  @media @mobile {
+    .flex-order(1);
+  }
+};
+aside.sidebarlegend {
+  position: relative;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: @df-sans;
+  font-weight: bold;
+  @media @mobile {
+    padding: 0;
+  }
+  h1 {
+    margin: 0;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  ul.scale {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow: auto;
+    padding-bottom: 8px;
+    width: 100%;
+    text-align: center;
+    .display-flex();
+    .flex-direction(column);
+    @media @mobile {
+      padding-bottom: 0;
+      .flex-direction(row);
+    }
+
+    li {
+      border-bottom: 1px solid lightgray;
+      padding: 5px 10px;
+      line-height: 18px;
+      margin-bottom: 2px;
+      @media @mobile {
+        float: left;
+        text-align: center;
+        width: 100% / 5;
+        border-bottom: none;
+        padding: 4px 10px;
+      }
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+
+    .block {
+      width: 2em;
+      height: 12px;
+      display: inline-block;
+      vertical-align: text-top;
+      @media @mobile {
+        display: block;
+        width: auto;
+      }
+    }
+  }
+}
+.source {
+  font-size: 12px;
+  padding: 10px 0 10px 0;
+  color: #999;
+  clear: both;
+  font-style: italic;
+  text-align: left;
+  .credit {
+    font-style: normal;
+    text-transform: uppercase;
+    display: inline-block;
+    float: right;
+  }
+}

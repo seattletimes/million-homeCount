@@ -1,0 +1,19 @@
+<section class="thin-div">
+  <div class="center">Don't Miss</div>
+</section>
+
+<section class="dont-miss">
+  <% data.forEach(function(story) { %>
+    <div class="story">
+      <div class="padded">
+      <a href="<%= story.link %>">
+        <img src="./assets/<%= story.image %>"></img>
+      </a>
+      <div class="small"><%= story.category %></div>
+      <a href="<%= story.link %>">
+        <div><%= story.category %></div>
+      </a>
+      </div>
+    </div>
+  <% }); %>
+</section>

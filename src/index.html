@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>
+    <%= json.project.title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Safari, you're the worst -->
+  <meta name='format-detection' content='telephone=no'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <%= t.include("partials/_head.html") %>
+</head>
+
+<body>
+
+  <responsive-child class="map-container">
+    <div class="outmost">
+      <section class="chatter">
+        <h1>Where the million-dollar homes are</h1>
+        <p>Click on each area to see how many single-family homes sold for at least $1 million in each area in 2017.</p>
+      </section>
+
+      <div class="aspect-ratio-outer">
+        <div class="aspect-ratio-inner">
+
+          <leaflet-map zoom=10>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+
+        </div>
+        <aside class="legend">
+          <h1>Million-dollar homes SOLD IN 2017</h1>
+          <ul class="scale">
+            <li>
+              <span class="block" style="background-color: #003b21"></span> 400 or more</li>
+            <li>
+              <span class="block" style="background-color: #076e45"></span> 300-399</li>
+            <li>
+              <span class="block" style="background-color: #4cb85e"></span> 200-299</li>
+            <li>
+              <span class="block" style="background-color: #addd8e"></span> 100-199</li>
+            <li>
+              <span class="block" style="background-color: #f7fcb9"></span> 0-99</li>
+          </ul>
+        </aside>
+      </div>
+
+
+      <div class="source">Source: Northwest Multiple Listing Service
+        <span class="credit">Emily M. Eng / THE SEATTLE TIMES</div>
+    </div>
+  </responsive-child>
+
+  <script src="app.js"></script>
+  <% /*= t.include("partials/_foot.html"); */ %>
+    <%= t.include("partials/_workHere.html") %>
+</body>
+
+</html>
