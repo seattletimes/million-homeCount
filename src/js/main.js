@@ -19,6 +19,9 @@ data.features.forEach(function(f) {
 		f.properties[prop] = (f.properties[prop] * 100).toFixed(1);
 	});
 });
+
+var commafy = s => (s*1).toLocaleString().replace(/1.0+$/, "");
+
 var mapElement = document.querySelector("leaflet-map");
 
 if (mapElement) {
